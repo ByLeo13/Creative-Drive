@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mi cuenta | Creative Drive</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+
+            <span class="logo-icon">
+                ✦
+            </span>
+
+            <span>
+                Creative Drive
+            </span>
+
+        </a>
+
+
+        <nav class="nav-menu">
+
+            <a href="index.html#inicio">
+                Inicio
+            </a>
+
+            <a href="index.html#directorio">
+                Directorio
+            </a>
+
+            <a href="index.html#sellos">
+                Sellos
+            </a>
+
+            <a href="index.html#nosotros">
+                Nosotros
+            </a>
+
+        </nav>
+
+
+        <div
+            class="nav-actions"
+            id="navActions"
+        >
+
+            <a
+                href="index.html#directorio"
+                class="add-business-btn"
+            >
+                Ver directorio
+            </a>
+
+
+            <button
+                type="button"
+                class="login-btn"
+                onclick="cerrarSesionCuenta()"
+            >
+                Cerrar sesión
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+
+    <main class="account-page">
+
+        <div class="account-container">
+
+
+            <!-- =================================================
+                 ENCABEZADO
+            ================================================== -->
+
+            <div class="account-header">
+
+                <span class="section-tag">
+                    MI CUENTA
+                </span>
+
+                <h1>
+                    Bienvenido a Creative Drive
+                </h1>
+
+                <p id="accountWelcome">
+                    Cargando información de tu cuenta...
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 INFORMACIÓN DEL USUARIO
+            ================================================== -->
+
+            <section class="account-card">
+
+                <div class="account-card-header">
+
+                    <div>
+
+                        <span class="section-tag">
+                            PERFIL
+                        </span>
+
+                        <h2>
+                            Información de tu cuenta
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="edit-business-btn"
+                        id="editProfileToggleBtn"
+                        onclick="abrirEdicionPerfil()"
+                    >
+                        ✏️ Editar perfil
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="account-info-grid"
+                    id="accountInfoView"
+                >
+
+
+                    <!-- NOMBRE -->
+
+                    <div class="account-info-item">
+
+                        <span>
+                            👤 Nombre
+                        </span>
+
+                        <strong id="accountName">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <!-- CORREO -->
+
+                    <div class="account-info-item">
+
+                        <span>
+                            📧 Correo electrónico
+                        </span>
+
+                        <strong id="accountEmail">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <!-- TIPO -->
+
+                    <div class="account-info-item">
+
+                        <span>
+                            🏷️ Tipo de cuenta
+                        </span>
+
+                        <strong id="accountType">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     FORMULARIO DE EDICIÓN (oculto por defecto)
+                ============================================== -->
+
+                <form
+                    id="editProfileForm"
+                    class="edit-profile-form"
+                    style="display: none;"
+                    onsubmit="guardarPerfilUsuario(event)"
+                >
+
+                    <div class="register-form-group">
+
+                        <label for="editName">
+                            Nombre completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editName"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="register-form-group">
+
+                        <label for="editEmail">
+                            Correo electrónico
+                        </label>
+
+                        <input
+                            type="email"
+                            id="editEmail"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="edit-profile-divider">
+
+                        <span>
+                            Cambiar contraseña (opcional)
+                        </span>
+
+                    </div>
+
+
+                    <div class="register-form-group">
+
+                        <label for="editCurrentPassword">
+                            Contraseña actual
+                        </label>
+
+                        <input
+                            type="password"
+                            id="editCurrentPassword"
+                            autocomplete="current-password"
+                            placeholder="Solo si vas a cambiarla"
+                        >
+
+                    </div>
+
+
+                    <div class="edit-profile-row">
+
+                        <div class="register-form-group">
+
+                            <label for="editNewPassword">
+                                Nueva contraseña
+                            </label>
+
+                            <input
+                                type="password"
+                                id="editNewPassword"
+                                autocomplete="new-password"
+                                minlength="6"
+                                placeholder="Mínimo 6 caracteres"
+                            >
+
+                        </div>
+
+
+                        <div class="register-form-group">
+
+                            <label for="editNewPasswordConfirm">
+                                Confirmar nueva contraseña
+                            </label>
+
+                            <input
+                                type="password"
+                                id="editNewPasswordConfirm"
+                                autocomplete="new-password"
+                                minlength="6"
+                                placeholder="Repite la nueva contraseña"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="editProfileMessage"
+                        class="register-message"
+                        aria-live="polite"
+                    ></div>
+
+
+                    <div class="edit-profile-actions">
+
+                        <button
+                            type="submit"
+                            class="register-submit-btn"
+                        >
+                            Guardar cambios
+                        </button>
+
+                        <button
+                            type="button"
+                            class="edit-profile-cancel-btn"
+                            onclick="cancelarEdicionPerfil()"
+                        >
+                            Cancelar
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 MI EMPRENDIMIENTO
+            ================================================== -->
+
+            <section class="account-card">
+
+                <div class="account-card-header">
+
+                    <div>
+
+                        <span class="section-tag">
+                            MI EMPRENDIMIENTO
+                        </span>
+
+                        <h2>
+                            Gestiona tu emprendimiento
+                        </h2>
+
+                        <p>
+                            Desde aquí podrás consultar
+                            la información que aparece en
+                            tu perfil público.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="businessAccountContent"
+                    class="business-account-content"
+                >
+
+                    <div class="account-loading">
+
+                        Cargando información...
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ACCIONES
+            ================================================== -->
+
+            <section class="account-actions">
+
+                <a
+                    href="index.html#directorio"
+                    class="back-btn"
+                >
+                    ← Volver al directorio
+                </a>
+
+
+                <button
+                    type="button"
+                    class="delete-business-btn"
+                    onclick="cerrarSesionCuenta()"
+                >
+                    🚪 Cerrar sesión
+                </button>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+
+            <!-- MARCA -->
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="logo"
+                >
+
+                    <span class="logo-icon">
+                        ✦
+                    </span>
+
+                    <span>
+                        Creative Drive
+                    </span>
+
+                </a>
+
+                <p>
+                    Reconociendo y conectando
+                    emprendimientos locales.
+                </p>
+
+            </div>
+
+
+            <!-- ENLACES -->
+
+            <div class="footer-links">
+
+                <a href="index.html#inicio">
+                    Inicio
+                </a>
+
+                <a href="index.html#directorio">
+                    Directorio
+                </a>
+
+                <a href="index.html#sellos">
+                    Sellos
+                </a>
+
+                <a href="index.html#nosotros">
+                    Nosotros
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Creative Drive.
+                Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         SCRIPT PRINCIPAL
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+
+
+    <!-- =====================================================
+         SCRIPT DE MI CUENTA
+    ====================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                cargarMiCuenta();
+
+            }
+        );
+
+
+        // =================================================
+        // CARGAR MI CUENTA
+        // =================================================
+
+        function cargarMiCuenta() {
+
+            /*
+             * Usamos la misma función que utiliza
+             * script.js para detectar la sesión.
+             */
+
+            const usuario =
+                obtenerUsuarioActual();
+
+
+            // ---------------------------------------------
+            // SIN SESIÓN
+            // ---------------------------------------------
+
+            if (!usuario) {
+
+                window.location.href =
+                    "login.html";
+
+                return;
+
+            }
+
+
+            // ---------------------------------------------
+            // ELEMENTOS
+            // ---------------------------------------------
+
+            const nombre =
+                document.getElementById(
+                    "accountName"
+                );
+
+
+            const email =
+                document.getElementById(
+                    "accountEmail"
+                );
+
+
+            const tipo =
+                document.getElementById(
+                    "accountType"
+                );
+
+
+            const bienvenida =
+                document.getElementById(
+                    "accountWelcome"
+                );
+
+
+            // ---------------------------------------------
+            // NOMBRE
+            // ---------------------------------------------
+
+            const nombreUsuario =
+                usuario.name ||
+                usuario.nombre ||
+                "Usuario";
+
+
+            if (nombre) {
+
+                nombre.textContent =
+                    nombreUsuario;
+
+            }
+
+
+            // ---------------------------------------------
+            // EMAIL
+            // ---------------------------------------------
+
+            if (email) {
+
+                email.textContent =
+                    usuario.email ||
+                    "—";
+
+            }
+
+
+            // ---------------------------------------------
+            // TIPO DE CUENTA
+            // ---------------------------------------------
+
+            if (tipo) {
+
+                tipo.textContent =
+
+                    usuario.type ===
+                    "emprendedor"
+
+                        ? "Emprendedor"
+
+                        : "Usuario";
+
+            }
+
+
+            // ---------------------------------------------
+            // BIENVENIDA
+            // ---------------------------------------------
+
+            if (bienvenida) {
+
+                bienvenida.textContent =
+
+                    `Hola, ${nombreUsuario}. ` +
+                    `Desde aquí puedes administrar ` +
+                    `tu cuenta y consultar tu emprendimiento.`;
+
+            }
+
+
+            // ---------------------------------------------
+            // EMPRENDIMIENTO
+            // ---------------------------------------------
+
+            cargarEmprendimientoUsuario(
+                usuario
+            );
+
+        }
+
+
+
+        // =================================================
+        // ABRIR FORMULARIO DE EDICIÓN
+        // =================================================
+
+        function abrirEdicionPerfil() {
+
+            const usuario =
+                obtenerUsuarioActual();
+
+
+            if (!usuario) {
+
+                window.location.href =
+                    "login.html";
+
+                return;
+
+            }
+
+
+            document.getElementById(
+                "editName"
+            ).value =
+                usuario.name || "";
+
+
+            document.getElementById(
+                "editEmail"
+            ).value =
+                usuario.email || "";
+
+
+            document.getElementById(
+                "editCurrentPassword"
+            ).value = "";
+
+            document.getElementById(
+                "editNewPassword"
+            ).value = "";
+
+            document.getElementById(
+                "editNewPasswordConfirm"
+            ).value = "";
+
+
+            const mensaje =
+                document.getElementById(
+                    "editProfileMessage"
+                );
+
+            mensaje.textContent = "";
+            mensaje.className =
+                "register-message";
+
+
+            document.getElementById(
+                "accountInfoView"
+            ).style.display = "none";
+
+            document.getElementById(
+                "editProfileToggleBtn"
+            ).style.display = "none";
+
+            document.getElementById(
+                "editProfileForm"
+            ).style.display = "flex";
+
+        }
+
+
+
+        // =================================================
+        // CANCELAR EDICIÓN
+        // =================================================
+
+        function cancelarEdicionPerfil() {
+
+            document.getElementById(
+                "editProfileForm"
+            ).style.display = "none";
+
+            document.getElementById(
+                "accountInfoView"
+            ).style.display = "";
+
+            document.getElementById(
+                "editProfileToggleBtn"
+            ).style.display = "";
+
+        }
+
+
+
+        // =================================================
+        // GUARDAR CAMBIOS DEL PERFIL
+        // =================================================
+
+        function guardarPerfilUsuario(
+            event
+        ) {
+
+            event.preventDefault();
+
+
+            const usuarioActual =
+                obtenerUsuarioActual();
+
+
+            if (!usuarioActual) {
+
+                window.location.href =
+                    "login.html";
+
+                return;
+
+            }
+
+
+            const mensaje =
+                document.getElementById(
+                    "editProfileMessage"
+                );
+
+
+            function mostrarError(
+                texto
+            ) {
+
+                mensaje.textContent =
+                    texto;
+
+                mensaje.className =
+                    "register-message error";
+
+            }
+
+
+            const nombre =
+                document
+                    .getElementById(
+                        "editName"
+                    )
+                    .value
+                    .trim();
+
+
+            const email =
+                document
+                    .getElementById(
+                        "editEmail"
+                    )
+                    .value
+                    .trim()
+                    .toLowerCase();
+
+
+            const passwordActual =
+                document.getElementById(
+                    "editCurrentPassword"
+                ).value;
+
+
+            const passwordNueva =
+                document.getElementById(
+                    "editNewPassword"
+                ).value;
+
+
+            const passwordConfirmar =
+                document.getElementById(
+                    "editNewPasswordConfirm"
+                ).value;
+
+
+
+            /* =========================================
+               VALIDAR NOMBRE
+            ========================================= */
+
+            if (
+                !nombre ||
+                nombre.length < 2
+            ) {
+
+                mostrarError(
+                    "Ingresa un nombre válido."
+                );
+
+                return;
+
+            }
+
+
+
+            /* =========================================
+               VALIDAR CORREO
+            ========================================= */
+
+            const emailValido =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+                    email
+                );
+
+
+            if (
+                !email ||
+                !emailValido
+            ) {
+
+                mostrarError(
+                    "Ingresa un correo electrónico válido."
+                );
+
+                return;
+
+            }
+
+
+
+            /* =========================================
+               BUSCAR CUENTA EN EL REGISTRO
+            ========================================= */
+
+            let usuarios = [];
+
+            try {
+
+                usuarios =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "creativeDriveUsers"
+                        )
+                    ) || [];
+
+            }
+
+            catch (error) {
+
+                usuarios = [];
+
+            }
+
+
+            const indice =
+                usuarios.findIndex(
+
+                    function (u) {
+
+                        return String(
+                            u.id
+                        ) ===
+                        String(
+                            usuarioActual.id
+                        );
+
+                    }
+
+                );
+
+
+            if (indice === -1) {
+
+                mostrarError(
+                    "No pudimos encontrar tu cuenta. " +
+                    "Cierra sesión y vuelve a entrar."
+                );
+
+                return;
+
+            }
+
+
+
+            /* =========================================
+               VERIFICAR CORREO DUPLICADO
+            ========================================= */
+
+            const correoDuplicado =
+                usuarios.some(
+
+                    function (u, i) {
+
+                        return (
+                            i !== indice &&
+                            u.email === email
+                        );
+
+                    }
+
+                );
+
+
+            if (correoDuplicado) {
+
+                mostrarError(
+                    "Ya existe otra cuenta con ese correo."
+                );
+
+                return;
+
+            }
+
+
+
+            /* =========================================
+               CAMBIO DE CONTRASEÑA (OPCIONAL)
+            ========================================= */
+
+            const quiereCambiarPassword =
+                passwordActual ||
+                passwordNueva ||
+                passwordConfirmar;
+
+
+            if (quiereCambiarPassword) {
+
+                if (
+                    !passwordActual ||
+                    !passwordNueva ||
+                    !passwordConfirmar
+                ) {
+
+                    mostrarError(
+                        "Completa los tres campos de " +
+                        "contraseña para cambiarla."
+                    );
+
+                    return;
+
+                }
+
+
+                if (
+                    passwordActual !==
+                    usuarios[indice].password
+                ) {
+
+                    mostrarError(
+                        "La contraseña actual no es correcta."
+                    );
+
+                    return;
+
+                }
+
+
+                if (
+                    passwordNueva.length < 6
+                ) {
+
+                    mostrarError(
+                        "La nueva contraseña debe tener " +
+                        "al menos 6 caracteres."
+                    );
+
+                    return;
+
+                }
+
+
+                if (
+                    passwordNueva !==
+                    passwordConfirmar
+                ) {
+
+                    mostrarError(
+                        "Las contraseñas nuevas no coinciden."
+                    );
+
+                    return;
+
+                }
+
+            }
+
+
+
+            /* =========================================
+               GUARDAR CAMBIOS
+            ========================================= */
+
+            usuarios[indice].name =
+                nombre;
+
+            usuarios[indice].email =
+                email;
+
+
+            if (quiereCambiarPassword) {
+
+                usuarios[indice].password =
+                    passwordNueva;
+
+            }
+
+
+            localStorage.setItem(
+                "creativeDriveUsers",
+                JSON.stringify(usuarios)
+            );
+
+
+
+            /* =========================================
+               ACTUALIZAR SESIÓN ACTIVA
+            ========================================= */
+
+            const sessionUser = {
+
+                id: usuarios[indice].id,
+                name: nombre,
+                email: email,
+                type: usuarios[indice].type
+
+            };
+
+
+            const sessionData =
+                JSON.stringify(sessionUser);
+
+
+            if (
+                localStorage.getItem(
+                    "creativeDriveCurrentUser"
+                )
+            ) {
+
+                localStorage.setItem(
+                    "creativeDriveCurrentUser",
+                    sessionData
+                );
+
+            }
+
+            else {
+
+                sessionStorage.setItem(
+                    "creativeDriveCurrentUser",
+                    sessionData
+                );
+
+            }
+
+
+
+            /* =========================================
+               REFRESCAR NAVBAR
+            ========================================= */
+
+            if (
+                typeof actualizarNavbar ===
+                "function"
+            ) {
+
+                actualizarNavbar();
+
+            }
+
+
+
+            /* =========================================
+               MENSAJE DE ÉXITO
+            ========================================= */
+
+            mensaje.textContent =
+                "¡Perfil actualizado correctamente!";
+
+            mensaje.className =
+                "register-message success";
+
+
+
+            /* =========================================
+               VOLVER A LA VISTA NORMAL
+            ========================================= */
+
+            setTimeout(
+
+                function () {
+
+                    cancelarEdicionPerfil();
+
+                    cargarMiCuenta();
+
+                },
+                1000
+
+            );
+
+        }
+
+
+
+        // =================================================
+        // CARGAR EMPRENDIMIENTO DEL USUARIO
+        // =================================================
+
+        function cargarEmprendimientoUsuario(
+            usuario
+        ) {
+
+            const contenedor =
+                document.getElementById(
+                    "businessAccountContent"
+                );
+
+
+            if (!contenedor) {
+
+                return;
+
+            }
+
+
+            /*
+             * IMPORTANTE:
+             *
+             * El script.js guarda cada emprendimiento
+             * con:
+             *
+             * usuarioId: usuario.id
+             *
+             * Por eso NO buscamos por correo.
+             */
+
+
+            let emprendimientosGuardados =
+                [];
+
+
+            try {
+
+                const datos =
+                    localStorage.getItem(
+                        "creativeDriveEmprendimientos"
+                    );
+
+
+                if (datos) {
+
+                    emprendimientosGuardados =
+                        JSON.parse(
+                            datos
+                        );
+
+                }
+
+
+                if (
+                    !Array.isArray(
+                        emprendimientosGuardados
+                    )
+                ) {
+
+                    emprendimientosGuardados =
+                        [];
+
+                }
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Error al cargar emprendimientos:",
+                    error
+                );
+
+                emprendimientosGuardados =
+                    [];
+
+            }
+
+
+            // ---------------------------------------------
+            // BUSCAR POR ID DEL USUARIO
+            // ---------------------------------------------
+
+            const emprendimiento =
+                emprendimientosGuardados.find(
+
+                    function (
+                        item
+                    ) {
+
+                        return (
+
+                            item &&
+                            item.usuarioId &&
+                            usuario.id &&
+                            String(
+                                item.usuarioId
+                            ) ===
+                            String(
+                                usuario.id
+                            )
+
+                        );
+
+                    }
+
+                );
+
+
+            // ---------------------------------------------
+            // SI NO TIENE EMPRENDIMIENTO
+            // ---------------------------------------------
+
+            if (!emprendimiento) {
+
+                contenedor.innerHTML = `
+
+                    <div class="account-empty">
+
+                        <div class="account-empty-icon">
+                            🏪
+                        </div>
+
+
+                        <h3>
+                            Todavía no tienes un emprendimiento
+                        </h3>
+
+
+                        <p>
+                            Agrega tu emprendimiento al
+                            directorio para comenzar a
+                            construir tu perfil público.
+                        </p>
+
+
+                        <a
+                            href="agregar.html"
+                            class="profile-btn"
+                        >
+                            + Agregar emprendimiento
+                        </a>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            // ---------------------------------------------
+            // DATOS SEGUROS
+            // ---------------------------------------------
+
+            const nombre =
+                emprendimiento.nombre ||
+                "Sin nombre";
+
+
+            const descripcion =
+                emprendimiento.descripcion ||
+                "Sin descripción disponible.";
+
+
+            const icono =
+                emprendimiento.icono ||
+                "🏪";
+
+
+            const ubicacion =
+                emprendimiento.ubicacionTexto ||
+                "📍 Sin ubicación";
+
+
+            const categoria =
+                emprendimiento.categoriaTexto ||
+                "Sin categoría";
+
+
+            // ---------------------------------------------
+            // MOSTRAR EMPRENDIMIENTO
+            // ---------------------------------------------
+
+            contenedor.innerHTML = `
+
+                <div class="account-business">
+
+
+                    <!-- ICONO -->
+
+                    <div class="account-business-icon">
+
+                        ${escaparHTML(icono)}
+
+                    </div>
+
+
+                    <!-- INFORMACIÓN -->
+
+                    <div class="account-business-info">
+
+
+                        <span class="section-tag">
+                            EMPRENDIMIENTO
+                        </span>
+
+
+                        <h3>
+
+                            ${escaparHTML(
+                                nombre
+                            )}
+
+                        </h3>
+
+
+                        <p>
+
+                            ${escaparHTML(
+                                descripcion
+                            )}
+
+                        </p>
+
+
+                        <div class="account-business-meta">
+
+
+                            <span>
+
+                                ${escaparHTML(
+                                    ubicacion
+                                )}
+
+                            </span>
+
+
+                            <span>
+
+                                ${escaparHTML(
+                                    categoria
+                                )}
+
+                            </span>
+
+
+                        </div>
+
+
+                        <!-- ACCIONES -->
+
+                        <div class="account-business-actions">
+
+
+                            <a
+                                href="perfil.html?id=${encodeURIComponent(
+                                    emprendimiento.id
+                                )}"
+                                class="profile-btn"
+                            >
+                                Ver perfil →
+                            </a>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+
+        // =================================================
+        // CERRAR SESIÓN
+        // =================================================
+
+        function cerrarSesionCuenta() {
+
+            const confirmar =
+                confirm(
+                    "¿Seguro que deseas cerrar sesión?"
+                );
+
+
+            if (!confirmar) {
+
+                return;
+
+            }
+
+
+            localStorage.removeItem(
+                "creativeDriveCurrentUser"
+            );
+
+
+            localStorage.removeItem(
+                "creativeDriveRemember"
+            );
+
+
+            sessionStorage.removeItem(
+                "creativeDriveCurrentUser"
+            );
+
+
+            window.location.href =
+                "index.html";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
+

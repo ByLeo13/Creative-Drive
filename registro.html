@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Crear cuenta | Creative Drive</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+
+            <span class="logo-icon">🏅</span>
+
+            <span>Creative Drive</span>
+
+        </a>
+
+
+        <nav class="nav-menu">
+
+            <a href="index.html">Inicio</a>
+
+            <a href="index.html#directorio">Directorio</a>
+
+            <a href="index.html#sellos">El Sello</a>
+
+            <a href="index.html#nosotros">Nosotros</a>
+
+        </nav>
+
+
+        <div
+            class="nav-actions"
+            id="navActions"
+        >
+
+            <!--
+                JavaScript genera aquí
+                los botones de sesión.
+            -->
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         REGISTRO
+    ====================================================== -->
+
+    <main class="register-page">
+
+        <div class="register-container">
+
+
+            <!-- ENCABEZADO -->
+
+            <div class="register-header">
+
+                <div class="register-icon">
+                    🏅
+                </div>
+
+                <span class="register-tag">
+                    CREATIVE DRIVE
+                </span>
+
+                <h1>
+                    Crea tu cuenta
+                </h1>
+
+                <p>
+                    Únete a Creative Drive y forma parte
+                    de nuestra comunidad de emprendimientos.
+                </p>
+
+            </div>
+
+
+
+            <!-- FORMULARIO -->
+
+            <form
+                id="registerForm"
+                class="register-form"
+            >
+
+
+                <!-- NOMBRE -->
+
+                <div class="register-form-group">
+
+                    <label for="registerName">
+                        Nombre completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Ej. Rodrigo Pérez"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- CORREO -->
+
+                <div class="register-form-group">
+
+                    <label for="registerEmail">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="ejemplo@correo.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- CONTRASEÑA -->
+
+                <div class="register-form-group">
+
+                    <label for="registerPassword">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Crea una contraseña"
+                        autocomplete="new-password"
+                        minlength="6"
+                        required
+                    >
+
+                    <small>
+                        La contraseña debe tener al menos 6 caracteres.
+                    </small>
+
+                </div>
+
+
+
+                <!-- CONFIRMAR CONTRASEÑA -->
+
+                <div class="register-form-group">
+
+                    <label for="registerPasswordConfirm">
+                        Confirmar contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registerPasswordConfirm"
+                        placeholder="Repite tu contraseña"
+                        autocomplete="new-password"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- TIPO DE USUARIO -->
+
+                <div class="register-form-group">
+
+                    <label for="registerType">
+                        Tipo de cuenta
+                    </label>
+
+                    <select id="registerType" required>
+
+                        <option value="">
+                            Selecciona una opción
+                        </option>
+
+                        <option value="usuario">
+                            Usuario
+                        </option>
+
+                        <option value="emprendedor">
+                            Emprendedor
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- MENSAJE -->
+
+                <div
+                    id="registerMessage"
+                    class="register-message"
+                    aria-live="polite"
+                ></div>
+
+
+
+                <!-- BOTÓN -->
+
+                <button
+                    type="submit"
+                    class="register-submit-btn"
+                >
+                    Crear cuenta
+                </button>
+
+
+            </form>
+
+
+
+            <!-- LOGIN -->
+
+            <div class="register-login">
+
+                <span>
+                    ¿Ya tienes una cuenta?
+                </span>
+
+                <a href="login.html">
+                    Iniciar sesión
+                </a>
+
+            </div>
+
+
+
+            <!-- VOLVER -->
+
+            <div class="register-back">
+
+                <a href="index.html">
+                    ← Volver al inicio
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="logo"
+                >
+
+                    <span class="logo-icon">
+                        🏅
+                    </span>
+
+                    <span>
+                        Creative Drive
+                    </span>
+
+                </a>
+
+                <p>
+                    Reconociendo y conectando
+                    emprendimientos locales.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="index.html#directorio">
+                    Directorio
+                </a>
+
+                <a href="index.html#sellos">
+                    El Sello
+                </a>
+
+                <a href="index.html#nosotros">
+                    Nosotros
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Creative Drive.
+                Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        const registerForm =
+            document.getElementById("registerForm");
+
+
+        registerForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document
+                        .getElementById("registerName")
+                        .value
+                        .trim();
+
+
+                const email =
+                    document
+                        .getElementById("registerEmail")
+                        .value
+                        .trim()
+                        .toLowerCase();
+
+
+                const password =
+                    document
+                        .getElementById("registerPassword")
+                        .value;
+
+
+                const passwordConfirm =
+                    document
+                        .getElementById("registerPasswordConfirm")
+                        .value;
+
+
+                const type =
+                    document
+                        .getElementById("registerType")
+                        .value;
+
+
+                const message =
+                    document.getElementById("registerMessage");
+
+
+
+                /* =========================================
+                   VALIDACIÓN
+                ========================================= */
+
+                if (
+                    !name ||
+                    !email ||
+                    !password ||
+                    !passwordConfirm ||
+                    !type
+                ) {
+
+                    message.textContent =
+                        "Completa todos los campos.";
+
+                    message.className =
+                        "register-message error";
+
+                    return;
+
+                }
+
+
+
+                /* =========================================
+                   COMPROBAR CONTRASEÑAS
+                ========================================= */
+
+                if (password !== passwordConfirm) {
+
+                    message.textContent =
+                        "Las contraseñas no coinciden.";
+
+                    message.className =
+                        "register-message error";
+
+                    return;
+
+                }
+
+
+
+                /* =========================================
+                   LONGITUD
+                ========================================= */
+
+                if (password.length < 6) {
+
+                    message.textContent =
+                        "La contraseña debe tener al menos 6 caracteres.";
+
+                    message.className =
+                        "register-message error";
+
+                    return;
+
+                }
+
+
+
+                /* =========================================
+                   BUSCAR USUARIOS EXISTENTES
+                ========================================= */
+
+                const users =
+                    JSON.parse(
+                        localStorage.getItem("creativeDriveUsers")
+                    ) || [];
+
+
+
+                /* =========================================
+                   COMPROBAR CORREO
+                ========================================= */
+
+                const existingUser =
+                    users.find(
+                        user => user.email === email
+                    );
+
+
+                if (existingUser) {
+
+                    message.textContent =
+                        "Ya existe una cuenta con este correo.";
+
+                    message.className =
+                        "register-message error";
+
+                    return;
+
+                }
+
+
+
+                /* =========================================
+                   CREAR USUARIO
+                ========================================= */
+
+                const newUser = {
+
+                    id: Date.now(),
+
+                    name: name,
+
+                    email: email,
+
+                    password: password,
+
+                    type: type,
+
+                    createdAt:
+                        new Date().toISOString()
+
+                };
+
+
+
+                /* =========================================
+                   GUARDAR USUARIO
+                ========================================= */
+
+                users.push(newUser);
+
+
+                localStorage.setItem(
+                    "creativeDriveUsers",
+                    JSON.stringify(users)
+                );
+
+
+
+                /* =========================================
+                   MENSAJE
+                ========================================= */
+
+                message.textContent =
+                    "¡Cuenta creada correctamente!";
+
+                message.className =
+                    "register-message success";
+
+
+
+                /* =========================================
+                   LIMPIAR FORMULARIO
+                ========================================= */
+
+                registerForm.reset();
+
+
+
+                /* =========================================
+                   IR AL LOGIN
+                ========================================= */
+
+                setTimeout(
+                    function () {
+
+                        window.location.href =
+                            "login.html";
+
+                    },
+                    1200
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

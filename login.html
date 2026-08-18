@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Iniciar sesión | Creative Drive</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="logo">
+
+            <span class="logo-icon">✦</span>
+
+            <span>Creative Drive</span>
+
+        </a>
+
+
+        <!-- MENÚ -->
+
+        <nav class="nav-menu">
+
+            <a href="index.html">
+                Inicio
+            </a>
+
+            <a href="index.html#directorio">
+                Directorio
+            </a>
+
+            <a href="index.html#sellos">
+                El Sello
+            </a>
+
+            <a href="index.html#nosotros">
+                Nosotros
+            </a>
+
+        </nav>
+
+
+        <!-- ACCIONES -->
+
+        <div
+            class="nav-actions"
+            id="navActions"
+        >
+
+            <!--
+                JavaScript genera aquí
+                los botones de sesión.
+            -->
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         LOGIN
+    ====================================================== -->
+
+    <main class="login-page">
+
+        <div class="login-container">
+
+
+            <!-- =================================================
+                 ENCABEZADO
+            ================================================== -->
+
+            <div class="login-header">
+
+                <div class="login-icon">
+                    ✦
+                </div>
+
+                <span class="login-tag">
+                    CREATIVE DRIVE
+                </span>
+
+                <h1>
+                    Bienvenido de nuevo
+                </h1>
+
+                <p>
+                    Inicia sesión para acceder a tu cuenta
+                    y gestionar tu emprendimiento.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FORMULARIO
+            ================================================== -->
+
+            <form
+                id="loginForm"
+                class="login-form"
+            >
+
+
+                <!-- CORREO -->
+
+                <div class="login-form-group">
+
+                    <label for="loginEmail">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        name="email"
+                        placeholder="ejemplo@correo.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- CONTRASEÑA -->
+
+                <div class="login-form-group">
+
+                    <div class="password-label-row">
+
+                        <label for="loginPassword">
+                            Contraseña
+                        </label>
+
+                        <a
+                            href="#"
+                            id="forgotPassword"
+                        >
+                            ¿Olvidaste tu contraseña?
+                        </a>
+
+                    </div>
+
+
+                    <div class="password-input-wrapper">
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="password"
+                            placeholder="Ingresa tu contraseña"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="toggle-password"
+                            aria-label="Mostrar contraseña"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     RECORDAR USUARIO
+                ================================================== -->
+
+                <div class="login-options">
+
+                    <label class="remember-option">
+
+                        <input
+                            type="checkbox"
+                            id="rememberUser"
+                        >
+
+                        <span>
+                            Recordarme
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MENSAJE
+                ================================================== -->
+
+                <div
+                    id="loginMessage"
+                    class="login-message"
+                    aria-live="polite"
+                ></div>
+
+
+
+                <!-- =================================================
+                     BOTÓN
+                ================================================== -->
+
+                <button
+                    type="submit"
+                    id="loginSubmit"
+                    class="login-submit-btn"
+                >
+                    Iniciar sesión
+                </button>
+
+
+            </form>
+
+
+
+            <!-- =================================================
+                 REGISTRO
+            ================================================== -->
+
+            <div class="login-register">
+
+                <span>
+                    ¿Todavía no tienes una cuenta?
+                </span>
+
+                <a href="registro.html">
+                    Crear una cuenta
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 VOLVER
+            ================================================== -->
+
+            <div class="login-back">
+
+                <a href="index.html">
+                    ← Volver al inicio
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+
+            <!-- MARCA -->
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="logo"
+                >
+
+                    <span class="logo-icon">
+                        ✦
+                    </span>
+
+                    <span>
+                        Creative Drive
+                    </span>
+
+                </a>
+
+                <p>
+                    Reconociendo y conectando
+                    emprendimientos locales.
+                </p>
+
+            </div>
+
+
+
+            <!-- ENLACES -->
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="index.html#directorio">
+                    Directorio
+                </a>
+
+                <a href="index.html#sellos">
+                    El Sello
+                </a>
+
+                <a href="index.html#nosotros">
+                    Nosotros
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- COPYRIGHT -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Creative Drive.
+                Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT DEL LOGIN
+    ====================================================== -->
+
+    <script>
+
+
+    /* =====================================================
+       ELEMENTOS
+    ====================================================== */
+
+    const togglePassword =
+        document.getElementById("togglePassword");
+
+    const loginPassword =
+        document.getElementById("loginPassword");
+
+    const forgotPassword =
+        document.getElementById("forgotPassword");
+
+    const loginForm =
+        document.getElementById("loginForm");
+
+    const loginSubmit =
+        document.getElementById("loginSubmit");
+
+    const message =
+        document.getElementById("loginMessage");
+
+
+
+    /* =====================================================
+       MOSTRAR / OCULTAR CONTRASEÑA
+    ====================================================== */
+
+    togglePassword.addEventListener(
+        "click",
+        function () {
+
+            if (loginPassword.type === "password") {
+
+                loginPassword.type = "text";
+
+                togglePassword.textContent = "🙈";
+
+                togglePassword.setAttribute(
+                    "aria-label",
+                    "Ocultar contraseña"
+                );
+
+            } else {
+
+                loginPassword.type = "password";
+
+                togglePassword.textContent = "👁️";
+
+                togglePassword.setAttribute(
+                    "aria-label",
+                    "Mostrar contraseña"
+                );
+
+            }
+
+        }
+    );
+
+
+
+    /* =====================================================
+       RECUPERAR CONTRASEÑA
+    ====================================================== */
+
+    forgotPassword.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            alert(
+                "La recuperación de contraseña estará disponible próximamente."
+            );
+
+        }
+    );
+
+
+
+    /* =====================================================
+       FORMULARIO DE LOGIN
+    ====================================================== */
+
+    loginForm.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+
+            /* =============================================
+               OBTENER DATOS
+            ============================================== */
+
+            const email =
+                document
+                    .getElementById("loginEmail")
+                    .value
+                    .trim()
+                    .toLowerCase();
+
+
+            const password =
+                document
+                    .getElementById("loginPassword")
+                    .value;
+
+
+            const rememberUser =
+                document
+                    .getElementById("rememberUser")
+                    .checked;
+
+
+
+            /* =============================================
+               LIMPIAR MENSAJE
+            ============================================== */
+
+            message.textContent = "";
+
+            message.className =
+                "login-message";
+
+
+
+            /* =============================================
+               VALIDACIÓN
+            ============================================== */
+
+            if (!email || !password) {
+
+                message.textContent =
+                    "Completa todos los campos.";
+
+                message.className =
+                    "login-message error";
+
+                return;
+
+            }
+
+
+
+            /* =============================================
+               OBTENER USUARIOS
+            ============================================== */
+
+            const users =
+                JSON.parse(
+                    localStorage.getItem(
+                        "creativeDriveUsers"
+                    )
+                ) || [];
+
+
+
+            /* =============================================
+               BUSCAR USUARIO
+            ============================================== */
+
+            const user =
+                users.find(
+                    function (item) {
+
+                        return (
+                            item.email &&
+                            item.email.toLowerCase() === email &&
+                            item.password === password
+                        );
+
+                    }
+                );
+
+
+
+            /* =============================================
+               USUARIO INCORRECTO
+            ============================================== */
+
+            if (!user) {
+
+                message.textContent =
+                    "Correo o contraseña incorrectos.";
+
+                message.className =
+                    "login-message error";
+
+                return;
+
+            }
+
+
+
+            /* =============================================
+               CREAR DATOS DE SESIÓN
+            ============================================== */
+
+            const sessionUser = {
+
+                id: user.id,
+
+                name: user.name,
+
+                email: user.email,
+
+                type: user.type
+
+            };
+
+
+
+            const sessionData =
+                JSON.stringify(sessionUser);
+
+
+
+            /* =============================================
+               LIMPIAR SESIONES ANTERIORES
+            ============================================== */
+
+            localStorage.removeItem(
+                "creativeDriveCurrentUser"
+            );
+
+            sessionStorage.removeItem(
+                "creativeDriveCurrentUser"
+            );
+
+
+
+            /* =============================================
+               GUARDAR SESIÓN
+            ============================================== */
+
+            if (rememberUser) {
+
+                /*
+                 * El usuario eligió "Recordarme".
+                 * La sesión permanecerá aunque cierre
+                 * el navegador.
+                 */
+
+                localStorage.setItem(
+                    "creativeDriveCurrentUser",
+                    sessionData
+                );
+
+                localStorage.setItem(
+                    "creativeDriveRemember",
+                    "true"
+                );
+
+            } else {
+
+                /*
+                 * La sesión solamente permanecerá
+                 * mientras la pestaña/sesión del navegador
+                 * esté activa.
+                 */
+
+                sessionStorage.setItem(
+                    "creativeDriveCurrentUser",
+                    sessionData
+                );
+
+                localStorage.removeItem(
+                    "creativeDriveRemember"
+                );
+
+            }
+
+
+
+            /* =============================================
+               MENSAJE DE ÉXITO
+            ============================================== */
+
+            message.textContent =
+                "¡Inicio de sesión exitoso!";
+
+            message.className =
+                "login-message success";
+
+
+
+            /* =============================================
+               DESACTIVAR BOTÓN
+            ============================================== */
+
+            loginSubmit.disabled = true;
+
+            loginSubmit.textContent =
+                "Ingresando...";
+
+
+
+            /* =============================================
+               REDIRECCIÓN
+            ============================================== */
+
+            setTimeout(
+                function () {
+
+                    window.location.href =
+                        "index.html";
+
+                },
+                800
+            );
+
+        }
+    );
+
+
+    </script>
+
+
+</body>
+
+</html>

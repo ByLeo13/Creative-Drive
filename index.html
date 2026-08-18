@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Creative Drive | Directorio de Emprendimientos
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         BARRA DE NAVEGACIÓN
+    =========================================== -->
+
+    <header class="navbar">
+
+
+        <!-- LOGO -->
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            <span class="logo-icon">
+                ✦
+            </span>
+
+            <span>
+                Creative Drive
+            </span>
+
+        </a>
+
+
+
+        <!-- MENÚ -->
+
+        <nav class="nav-menu">
+
+            <a href="#inicio">
+                Inicio
+            </a>
+
+            <a href="#directorio">
+                Directorio
+            </a>
+
+            <a href="#sellos">
+                Sellos
+            </a>
+
+            <a href="#nosotros">
+                Nosotros
+            </a>
+
+        </nav>
+
+
+
+        <!-- ACCIONES DE USUARIO -->
+
+        <div
+            class="nav-actions"
+            id="navActions"
+        >
+
+            <!--
+                JavaScript genera aquí
+                los botones de sesión.
+            -->
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+    =========================================== -->
+
+    <main>
+
+
+        <!-- ==========================================
+             HERO
+        =========================================== -->
+
+        <section
+            class="hero"
+            id="inicio"
+        >
+
+            <div class="hero-content">
+
+
+                <!-- BADGE -->
+
+                <span class="hero-badge">
+
+                    ✦ Plataforma de emprendimientos
+
+                </span>
+
+
+
+                <!-- TÍTULO -->
+
+                <h1>
+
+                    Descubre emprendimientos
+
+                    <span>
+
+                        que tienen algo que contar.
+
+                    </span>
+
+                </h1>
+
+
+
+                <!-- DESCRIPCIÓN -->
+
+                <p>
+
+                    Explora negocios, conoce a las personas detrás
+                    de cada emprendimiento y descubre nuevas ideas
+                    dentro de nuestra comunidad.
+
+                </p>
+
+
+
+                <!-- ==================================
+                     BUSCADOR
+                =================================== -->
+
+                <div class="search-container">
+
+                    <div class="search-box">
+
+
+                        <span class="search-icon">
+                            🔍
+                        </span>
+
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Buscar emprendimientos..."
+                            autocomplete="off"
+                            oninput="buscarEmprendimiento()"
+                            onkeydown="buscarConEnter(event)"
+                        >
+
+
+                        <button
+                            type="button"
+                            onclick="buscarEmprendimiento()"
+                            class="search-btn"
+                        >
+
+                            Buscar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================
+                     FILTROS
+                =================================== -->
+
+                <div class="filters">
+
+
+                    <!-- CATEGORÍA -->
+
+                    <select
+                        id="categoryFilter"
+                        onchange="filtrarEmprendimientos()"
+                    >
+
+                        <option value="todos">
+                            Todas las categorías
+                        </option>
+
+                        <option value="alimentacion">
+                            🍔 Alimentación
+                        </option>
+
+                        <option value="moda">
+                            👕 Moda
+                        </option>
+
+                        <option value="diseno">
+                            🎨 Diseño
+                        </option>
+
+                        <option value="tecnologia">
+                            💻 Tecnología
+                        </option>
+
+                        <option value="belleza">
+                            💄 Belleza
+                        </option>
+
+                        <option value="servicios">
+                            🔧 Servicios
+                        </option>
+
+                        <option value="educacion">
+                            📚 Educación
+                        </option>
+
+                        <option value="comercio">
+                            🛍️ Comercio
+                        </option>
+
+                    </select>
+
+
+
+                    <!-- UBICACIÓN -->
+
+                    <select
+                        id="locationFilter"
+                        onchange="filtrarEmprendimientos()"
+                    >
+
+                        <option value="todas">
+                            Todas las ubicaciones
+                        </option>
+
+                        <option value="guayaquil">
+                            📍 Guayaquil
+                        </option>
+
+                        <option value="quito">
+                            📍 Quito
+                        </option>
+
+                        <option value="cuenca">
+                            📍 Cuenca
+                        </option>
+
+                    </select>
+
+
+
+                    <!-- ORDENAMIENTO -->
+
+                    <select
+                        id="sortFilter"
+                        onchange="aplicarOrdenamiento()"
+                    >
+
+                        <option value="defecto">
+                            Ordenar por
+                        </option>
+
+                        <option value="reconocidos">
+                            🏅 Reconocidos primero
+                        </option>
+
+                        <option value="valoracion">
+                            ⭐ Mejor valorados
+                        </option>
+
+                        <option value="recientes">
+                            🆕 Más recientes
+                        </option>
+
+                        <option value="nombre">
+                            🔤 Nombre A-Z
+                        </option>
+
+                    </select>
+
+
+
+                    <!-- LIMPIAR -->
+
+                    <button
+                        type="button"
+                        class="clear-filters"
+                        onclick="limpiarFiltros()"
+                    >
+
+                        Limpiar filtros
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             DIRECTORIO
+        =========================================== -->
+
+        <section
+            class="directory"
+            id="directorio"
+        >
+
+
+            <!-- ENCABEZADO -->
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-tag">
+                        DIRECTORIO
+                    </span>
+
+
+                    <h2>
+                        Descubre emprendimientos
+                    </h2>
+
+
+                    <p>
+
+                        Conoce proyectos y negocios que forman
+                        parte de nuestra comunidad.
+
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="view-all-btn"
+                    onclick="mostrarTodos()"
+                >
+
+                    Ver todos →
+
+                </button>
+
+            </div>
+
+
+
+            <!-- CONTADOR -->
+
+            <div
+                id="resultsCount"
+                class="results-count"
+            >
+
+                Emprendimientos encontrados.
+
+            </div>
+
+
+
+            <!-- TARJETAS -->
+
+            <div
+                class="business-grid"
+                id="businessGrid"
+            >
+
+                <!--
+                    JavaScript genera
+                    las tarjetas aquí.
+                -->
+
+            </div>
+
+
+
+            <!-- SIN RESULTADOS -->
+
+            <div
+                id="noResults"
+                class="no-results"
+                style="display: none;"
+            >
+
+                <div class="no-results-icon">
+                    🔎
+                </div>
+
+
+                <h3>
+                    No encontramos emprendimientos
+                </h3>
+
+
+                <p>
+                    Intenta cambiar tu búsqueda o los filtros.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             SELLOS
+        =========================================== -->
+
+        <section
+            class="seals-section"
+            id="sellos"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-tag">
+                        RECONOCIMIENTO
+                    </span>
+
+
+                    <h2>
+                        Conoce nuestros sellos
+                    </h2>
+
+
+                    <p>
+
+                        Reconocimientos que ayudan a destacar
+                        diferentes características de los emprendimientos.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="seals-grid">
+
+
+                <!-- SELLO 1 -->
+
+                <article class="seal-card">
+
+                    <div class="seal-icon">
+                        🏅
+                    </div>
+
+
+                    <h3>
+                        Emprendimiento destacado
+                    </h3>
+
+
+                    <p>
+
+                        Reconoce emprendimientos que destacan
+                        por su propuesta y conexión con la comunidad.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- SELLO 2 -->
+
+                <article class="seal-card">
+
+                    <div class="seal-icon">
+                        ⭐
+                    </div>
+
+
+                    <h3>
+                        Calidad reconocida
+                    </h3>
+
+
+                    <p>
+
+                        Identifica emprendimientos que mantienen
+                        un compromiso constante con sus productos
+                        o servicios.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- SELLO 3 -->
+
+                <article class="seal-card">
+
+                    <div class="seal-icon">
+                        🤝
+                    </div>
+
+
+                    <h3>
+                        Conexión local
+                    </h3>
+
+
+                    <p>
+
+                        Destaca negocios que mantienen una relación
+                        cercana con su comunidad.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             NOSOTROS
+        =========================================== -->
+
+        <section
+            class="about-section"
+            id="nosotros"
+        >
+
+            <div class="about-content">
+
+                <span class="section-tag">
+                    SOBRE CREATIVE DRIVE
+                </span>
+
+
+                <h2>
+                    Conectamos personas con emprendimientos.
+                </h2>
+
+
+                <p>
+
+                    Creative Drive busca crear un espacio donde
+                    los emprendimientos puedan mostrar quiénes son,
+                    qué ofrecen y qué los hace diferentes.
+
+                </p>
+
+
+                <p>
+
+                    Al mismo tiempo, queremos ayudar a las personas
+                    a descubrir nuevos negocios y conocer mejor
+                    las historias detrás de cada proyecto.
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+
+            <!-- MARCA -->
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="logo"
+                >
+
+                    <span class="logo-icon">
+                        ✦
+                    </span>
+
+                    <span>
+                        Creative Drive
+                    </span>
+
+                </a>
+
+
+                <p>
+                    Conectando personas con emprendimientos.
+                </p>
+
+            </div>
+
+
+
+            <!-- ENLACES -->
+
+            <div class="footer-links">
+
+                <a href="#inicio">
+                    Inicio
+                </a>
+
+                <a href="#directorio">
+                    Directorio
+                </a>
+
+                <a href="#sellos">
+                    Sellos
+                </a>
+
+                <a href="#nosotros">
+                    Nosotros
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- COPYRIGHT -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Creative Drive
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Agregar emprendimiento | Creative Drive</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         BARRA DE NAVEGACIÓN
+    =========================================== -->
+
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            <span class="logo-icon">
+                ✦
+            </span>
+
+            <span>
+                Creative Drive
+            </span>
+
+        </a>
+
+
+        <nav class="nav-menu">
+
+            <a href="index.html#inicio">
+                Inicio
+            </a>
+
+            <a href="index.html#directorio">
+                Directorio
+            </a>
+
+            <a href="index.html#sellos">
+                Sellos
+            </a>
+
+            <a href="index.html#nosotros">
+                Nosotros
+            </a>
+
+        </nav>
+
+
+        <div
+            class="nav-actions"
+            id="navActions"
+        ></div>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+    =========================================== -->
+
+    <main>
+
+        <section class="add-business-page">
+
+            <div class="add-business-container">
+
+
+                <!-- ==================================
+                     ENCABEZADO
+                =================================== -->
+
+                <div class="form-header">
+
+                    <span class="section-tag">
+                        CREATIVE DRIVE
+                    </span>
+
+                    <h1 class="form-title">
+                        Agrega tu emprendimiento
+                    </h1>
+
+                    <p class="form-subtitle">
+                        Comparte tu proyecto con nuestra comunidad
+                        y permite que más personas conozcan tu negocio.
+                    </p>
+
+                </div>
+
+
+
+                <!-- ==================================
+                     FORMULARIO
+                =================================== -->
+
+                <form
+                    id="businessForm"
+                    class="business-form"
+                    onsubmit="manejarFormularioEmprendimiento(event)"
+                >
+
+
+                    <!-- ==================================
+                         IMÁGENES
+                    =================================== -->
+
+                    <div class="form-section">
+
+                        <h2>
+                            Imágenes del emprendimiento
+                        </h2>
+
+                        <p class="form-help">
+                            Estas imágenes aparecerán en la presentación
+                            principal de tu perfil público.
+                        </p>
+
+
+
+                        <!-- ==================================
+                             FOTO DE PERFIL
+                        =================================== -->
+
+                        <div class="form-group">
+
+                            <label for="businessProfileImage">
+
+                                Foto de perfil
+
+                                <span
+                                    id="profileRequiredMark"
+                                    class="required-mark"
+                                >
+                                    *
+                                </span>
+
+                            </label>
+
+                            <p class="form-help">
+                                Utiliza tu logotipo o una imagen que
+                                represente claramente a tu emprendimiento.
+                            </p>
+
+
+                            <div class="image-upload-box">
+
+                                <label
+                                    for="businessProfileImage"
+                                    class="image-upload-label"
+                                >
+
+                                    <div
+                                        id="profileImagePreview"
+                                        class="image-upload-preview"
+                                    >
+
+                                        <span class="image-upload-icon">
+                                            🖼️
+                                        </span>
+
+                                        <span>
+                                            Seleccionar foto de perfil
+                                        </span>
+
+                                    </div>
+
+
+                                    <input
+                                        type="file"
+                                        id="businessProfileImage"
+                                        name="businessProfileImage"
+                                        accept="image/*"
+                                    >
+
+                                </label>
+
+
+                                <button
+                                    type="button"
+                                    id="removeProfileImage"
+                                    class="remove-image-btn"
+                                    style="display: none;"
+                                >
+                                    ✕ Quitar imagen
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ==================================
+                             FOTO DE PORTADA
+                        =================================== -->
+
+                        <div class="form-group">
+
+                            <label for="businessCoverImage">
+
+                                Foto de portada
+
+                                <span
+                                    id="coverRequiredMark"
+                                    class="required-mark"
+                                >
+                                    *
+                                </span>
+
+                            </label>
+
+                            <p class="form-help">
+                                Será utilizada como imagen principal
+                                en la parte superior de tu perfil.
+                            </p>
+
+
+                            <div class="image-upload-box">
+
+                                <label
+                                    for="businessCoverImage"
+                                    class="image-upload-label image-upload-cover"
+                                >
+
+                                    <div
+                                        id="coverImagePreview"
+                                        class="image-upload-preview"
+                                    >
+
+                                        <span class="image-upload-icon">
+                                            🖼️
+                                        </span>
+
+                                        <span>
+                                            Seleccionar foto de portada
+                                        </span>
+
+                                    </div>
+
+
+                                    <input
+                                        type="file"
+                                        id="businessCoverImage"
+                                        name="businessCoverImage"
+                                        accept="image/*"
+                                    >
+
+                                </label>
+
+
+                                <button
+                                    type="button"
+                                    id="removeCoverImage"
+                                    class="remove-image-btn"
+                                    style="display: none;"
+                                >
+                                    ✕ Quitar imagen
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ==================================
+                             GALERÍA
+                        =================================== -->
+
+                        <div class="form-group gallery-upload-section">
+
+                            <label for="businessGalleryImages">
+
+                                Galería de fotos
+
+                            </label>
+
+                            <p class="form-help">
+
+                                Agrega fotografías de tus productos,
+                                servicios, local o cualquier imagen que
+                                ayude a conocer mejor tu emprendimiento.
+
+                            </p>
+
+
+                            <div class="image-upload-box gallery-upload-box">
+
+                                <label
+                                    for="businessGalleryImages"
+                                    class="image-upload-label"
+                                >
+
+                                    <div
+                                        class="image-upload-preview gallery-upload-preview"
+                                    >
+
+                                        <span class="image-upload-icon">
+                                            📸
+                                        </span>
+
+                                        <span>
+                                            Seleccionar fotos para la galería
+                                        </span>
+
+                                        <small>
+                                            Puedes seleccionar hasta 10 imágenes
+                                        </small>
+
+                                    </div>
+
+
+                                    <input
+                                        type="file"
+                                        id="businessGalleryImages"
+                                        name="businessGalleryImages"
+                                        accept="image/*"
+                                        multiple
+                                    >
+
+                                </label>
+
+                            </div>
+
+
+                            <!-- ==================================
+                                 FOTOS EXISTENTES EN EDICIÓN
+                            =================================== -->
+
+                            <div
+                                id="existingGalleryTitle"
+                                style="display: none;"
+                            >
+
+                                <h3>
+                                    Fotos actuales
+                                </h3>
+
+                                <p class="form-help">
+                                    Estas fotografías ya pertenecen
+                                    a tu emprendimiento.
+                                </p>
+
+                            </div>
+
+
+                            <div
+                                id="existingGalleryPreview"
+                                class="gallery-upload-preview-grid"
+                            ></div>
+
+
+                            <!-- ==================================
+                                 NUEVAS FOTOS
+                            =================================== -->
+
+                            <div
+                                id="newGalleryTitle"
+                                style="display: none;"
+                            >
+
+                                <h3>
+                                    Nuevas fotos seleccionadas
+                                </h3>
+
+                            </div>
+
+
+                            <div
+                                id="galleryPreview"
+                                class="gallery-upload-preview-grid"
+                            ></div>
+
+
+                            <div class="image-gallery-info">
+
+                                <span>
+                                    📸
+                                </span>
+
+                                <p>
+                                    Puedes tener hasta
+                                    <strong>10 fotografías</strong>
+                                    en total.
+                                    Cada imagen debe pesar máximo
+                                    <strong>3 MB</strong>.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==================================
+                         INFORMACIÓN BÁSICA
+                    =================================== -->
+
+                    <div class="form-section">
+
+                        <h2>
+                            Información básica
+                        </h2>
+
+
+                        <div class="form-group">
+
+                            <label for="businessName">
+                                Nombre del emprendimiento
+                            </label>
+
+                            <input
+                                type="text"
+                                id="businessName"
+                                name="businessName"
+                                placeholder="Ej. Café Central"
+                                autocomplete="organization"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="businessDescription">
+                                Descripción
+                            </label>
+
+                            <textarea
+                                id="businessDescription"
+                                name="businessDescription"
+                                rows="5"
+                                placeholder="Cuéntanos brevemente sobre tu emprendimiento..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==================================
+                         CATEGORÍAS
+                    =================================== -->
+
+                    <div class="form-section">
+
+                        <h2>
+                            Categorías
+                        </h2>
+
+                        <p class="form-help">
+                            Selecciona una o varias categorías.
+                        </p>
+
+
+                        <div class="category-options">
+
+
+                            <label class="category-option">
+
+                                <input
+                                    type="checkbox"
+                                    name="category"
+                                    value="alimentacion"
+                                >
+
+                                <span>
+                                    🍔 Alimentación
+                                </span>
+
+                            </label>
+
+
+                            <label class="category-option">
+
+                                <input
+                                    type="checkbox"
+                                    name="category"
+                                    value="moda"
+                                >
+
+                                <span>
+                                    👕 Moda
+                                </span>
+
+                            </label>
+
+
+                            <label class="category-option">
+
+                                <input
+                                    type="checkbox"
+                                    name="category"
+                                    value="diseno"
+                                >
+
+                                <span>
+                                    🎨 Diseño
+                                </span>
+
+                            </label>
+
+
+                            <label class="category-option">
+
+                                <input
+                                    type="checkbox"
+                                    name="category"
+                                    value="tecnologia"
+                                >
+
+                                <span>
+                                    💻 Tecnología
+                                </span>
+
+                            </label>
+
+
+                            <label class="category-option">
+
+                                <input
+                                    type="checkbox"
+                                    name="category"
+                                    value="belleza"
+                                >
+
+                                <span>
+                                    💄 Belleza
+                                </span>
+
+                            </label>
+
+
+                            <label class="category-option">
+
+                                <input
+                                    type="checkbox"
+                                    name="category"
+                                    value="servicios"
+                                >
+
+                                <span>
+                                    🔧 Servicios
+                                </span>
+
+                            </label>
+
+
+                            <label class="category-option">
+
+                                <input
+                                    type="checkbox"
+                                    name="category"
+                                    value="educacion"
+                                >
+
+                                <span>
+                                    📚 Educación
+                                </span>
+
+                            </label>
+
+
+                            <label class="category-option">
+
+                                <input
+                                    type="checkbox"
+                                    name="category"
+                                    value="comercio"
+                                >
+
+                                <span>
+                                    🛍️ Comercio
+                                </span>
+
+                            </label>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==================================
+                         UBICACIÓN
+                    =================================== -->
+
+                    <div class="form-section">
+
+                        <h2>
+                            Ubicación
+                        </h2>
+
+
+                        <div class="form-group">
+
+                            <label for="businessLocation">
+                                Ciudad
+                            </label>
+
+
+                            <select
+                                id="businessLocation"
+                                name="businessLocation"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecciona una ciudad
+                                </option>
+
+                                <option value="guayaquil">
+                                    Guayaquil
+                                </option>
+
+                                <option value="quito">
+                                    Quito
+                                </option>
+
+                                <option value="cuenca">
+                                    Cuenca
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==================================
+                         CONTACTO
+                    =================================== -->
+
+                    <div class="form-section">
+
+                        <h2>
+                            Información de contacto
+                        </h2>
+
+                        <p class="form-help">
+                            Estos datos permitirán que las personas
+                            puedan ponerse en contacto con tu emprendimiento.
+                        </p>
+
+
+                        <div class="form-group">
+
+                            <label for="businessInstagram">
+                                Instagram
+                            </label>
+
+                            <input
+                                type="text"
+                                id="businessInstagram"
+                                name="businessInstagram"
+                                placeholder="@tuemprendimiento"
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="businessWhatsapp">
+                                WhatsApp
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="businessWhatsapp"
+                                name="businessWhatsapp"
+                                placeholder="0999999999"
+                                autocomplete="tel"
+                                inputmode="tel"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="businessEmail">
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                type="email"
+                                id="businessEmail"
+                                name="businessEmail"
+                                placeholder="ejemplo@correo.com"
+                                autocomplete="email"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==================================
+                         BOTONES
+                    =================================== -->
+
+                    <div class="form-actions">
+
+                        <a
+                            href="index.html#directorio"
+                            class="cancel-btn"
+                        >
+                            Cancelar
+                        </a>
+
+
+                        <button
+                            type="submit"
+                            id="submitBusinessButton"
+                            class="submit-business-btn"
+                        >
+                            Publicar emprendimiento
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="logo"
+                >
+
+                    <span class="logo-icon">
+                        ✦
+                    </span>
+
+                    <span>
+                        Creative Drive
+                    </span>
+
+                </a>
+
+
+                <p>
+                    Conectando personas con emprendimientos.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html#inicio">
+                    Inicio
+                </a>
+
+                <a href="index.html#directorio">
+                    Directorio
+                </a>
+
+                <a href="index.html#sellos">
+                    Sellos
+                </a>
+
+                <a href="index.html#nosotros">
+                    Nosotros
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Creative Drive.
+                Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT PRINCIPAL
+    =========================================== -->
+
+    <script src="script.js"></script>
+
+
+
+    <!-- ==========================================
+         SISTEMA DE IMÁGENES
+    =========================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                configurarFormularioImagenes();
+
+            }
+        );
+
+
+
+        // =====================================================
+        // CONFIGURAR SISTEMA DE IMÁGENES
+        // =====================================================
+
+        function configurarFormularioImagenes() {
+
+            const profileInput =
+                document.getElementById(
+                    "businessProfileImage"
+                );
+
+            const profilePreview =
+                document.getElementById(
+                    "profileImagePreview"
+                );
+
+            const removeProfileButton =
+                document.getElementById(
+                    "removeProfileImage"
+                );
+
+
+            const coverInput =
+                document.getElementById(
+                    "businessCoverImage"
+                );
+
+            const coverPreview =
+                document.getElementById(
+                    "coverImagePreview"
+                );
+
+            const removeCoverButton =
+                document.getElementById(
+                    "removeCoverImage"
+                );
+
+
+            const galleryInput =
+                document.getElementById(
+                    "businessGalleryImages"
+                );
+
+            const galleryPreview =
+                document.getElementById(
+                    "galleryPreview"
+                );
+
+
+            // =================================================
+            // FOTO DE PERFIL
+            // =================================================
+
+            if (
+                profileInput &&
+                profilePreview
+            ) {
+
+                profileInput.addEventListener(
+                    "change",
+                    function () {
+
+                        mostrarVistaPreviaImagen(
+                            profileInput,
+                            profilePreview,
+                            removeProfileButton,
+                            "Seleccionar foto de perfil"
+                        );
+
+                    }
+                );
+
+            }
+
+
+            if (
+                removeProfileButton &&
+                profileInput
+            ) {
+
+                removeProfileButton.addEventListener(
+                    "click",
+                    function () {
+
+                        profileInput.value = "";
+
+                        restaurarVistaPrevia(
+                            profilePreview,
+                            "🖼️",
+                            "Seleccionar foto de perfil"
+                        );
+
+                        removeProfileButton.style.display =
+                            "none";
+
+                    }
+                );
+
+            }
+
+
+
+            // =================================================
+            // FOTO DE PORTADA
+            // =================================================
+
+            if (
+                coverInput &&
+                coverPreview
+            ) {
+
+                coverInput.addEventListener(
+                    "change",
+                    function () {
+
+                        mostrarVistaPreviaImagen(
+                            coverInput,
+                            coverPreview,
+                            removeCoverButton,
+                            "Seleccionar foto de portada"
+                        );
+
+                    }
+                );
+
+            }
+
+
+            if (
+                removeCoverButton &&
+                coverInput
+            ) {
+
+                removeCoverButton.addEventListener(
+                    "click",
+                    function () {
+
+                        coverInput.value = "";
+
+                        restaurarVistaPrevia(
+                            coverPreview,
+                            "🖼️",
+                            "Seleccionar foto de portada"
+                        );
+
+                        removeCoverButton.style.display =
+                            "none";
+
+                    }
+                );
+
+            }
+
+
+
+            // =================================================
+            // GALERÍA
+            // =================================================
+
+            if (
+                galleryInput &&
+                galleryPreview
+            ) {
+
+                galleryInput.addEventListener(
+                    "change",
+                    function () {
+
+                        mostrarVistaPreviaGaleria(
+                            galleryInput,
+                            galleryPreview
+                        );
+
+                    }
+                );
+
+            }
+
+        }
+
+
+
+        // =====================================================
+        // VALIDAR IMAGEN
+        // =====================================================
+
+        function validarImagen(
+            archivo
+        ) {
+
+            if (!archivo) {
+                return false;
+            }
+
+
+            if (
+                !archivo.type ||
+                !archivo.type.startsWith("image/")
+            ) {
+
+                return false;
+
+            }
+
+
+            const maxSize =
+                3 * 1024 * 1024;
+
+
+            if (
+                archivo.size > maxSize
+            ) {
+
+                return false;
+
+            }
+
+
+            return true;
+
+        }
+
+
+
+        // =====================================================
+        // PREVISUALIZAR UNA IMAGEN
+        // =====================================================
+
+        function mostrarVistaPreviaImagen(
+            input,
+            preview,
+            removeButton,
+            texto
+        ) {
+
+            if (
+                !input.files ||
+                !input.files[0]
+            ) {
+
+                return;
+
+            }
+
+
+            const archivo =
+                input.files[0];
+
+
+            if (
+                !archivo.type ||
+                !archivo.type.startsWith("image/")
+            ) {
+
+                alert(
+                    "Por favor selecciona un archivo de imagen válido."
+                );
+
+                input.value = "";
+
+                restaurarVistaPrevia(
+                    preview,
+                    "🖼️",
+                    texto
+                );
+
+                if (removeButton) {
+
+                    removeButton.style.display =
+                        "none";
+
+                }
+
+                return;
+
+            }
+
+
+            const maxSize =
+                3 * 1024 * 1024;
+
+
+            if (
+                archivo.size > maxSize
+            ) {
+
+                alert(
+                    "La imagen no puede superar los 3 MB."
+                );
+
+                input.value = "";
+
+                restaurarVistaPrevia(
+                    preview,
+                    "🖼️",
+                    texto
+                );
+
+                if (removeButton) {
+
+                    removeButton.style.display =
+                        "none";
+
+                }
+
+                return;
+
+            }
+
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function (event) {
+
+                    preview.innerHTML = `
+
+                        <img
+                            src="${event.target.result}"
+                            alt="${texto}"
+                        >
+
+                    `;
+
+
+                    if (removeButton) {
+
+                        removeButton.style.display =
+                            "inline-flex";
+
+                    }
+
+                };
+
+
+            reader.readAsDataURL(
+                archivo
+            );
+
+        }
+
+
+
+        // =====================================================
+        // PREVISUALIZAR GALERÍA
+        // =====================================================
+
+        function mostrarVistaPreviaGaleria(
+            input,
+            preview
+        ) {
+
+            if (
+                !input.files ||
+                input.files.length === 0
+            ) {
+
+                preview.innerHTML = "";
+
+                return;
+
+            }
+
+
+            const archivos =
+                Array.from(
+                    input.files
+                );
+
+
+            // -----------------------------------------------
+            // MÁXIMO 10 FOTOS
+            // -----------------------------------------------
+
+            if (
+                archivos.length > 10
+            ) {
+
+                alert(
+                    "Puedes seleccionar un máximo de 10 fotografías."
+                );
+
+                input.value = "";
+
+                preview.innerHTML = "";
+
+                return;
+
+            }
+
+
+            // -----------------------------------------------
+            // VALIDAR TODAS LAS FOTOS ANTES DE MOSTRARLAS
+            // -----------------------------------------------
+
+            for (
+                let i = 0;
+                i < archivos.length;
+                i++
+            ) {
+
+                const archivo =
+                    archivos[i];
+
+
+                if (
+                    !archivo.type ||
+                    !archivo.type.startsWith("image/")
+                ) {
+
+                    alert(
+                        `La fotografía ${i + 1} no es una imagen válida.`
+                    );
+
+                    input.value = "";
+
+                    preview.innerHTML = "";
+
+                    return;
+
+                }
+
+
+                const maxSize =
+                    3 * 1024 * 1024;
+
+
+                if (
+                    archivo.size > maxSize
+                ) {
+
+                    alert(
+                        `La fotografía ${i + 1} supera el límite de 3 MB.`
+                    );
+
+                    input.value = "";
+
+                    preview.innerHTML = "";
+
+                    return;
+
+                }
+
+            }
+
+
+            preview.innerHTML = "";
+
+
+            // -----------------------------------------------
+            // MOSTRAR PREVISUALIZACIONES
+            // -----------------------------------------------
+
+            archivos.forEach(
+                function (
+                    archivo,
+                    indice
+                ) {
+
+                    const reader =
+                        new FileReader();
+
+
+                    reader.onload =
+                        function (event) {
+
+                            const item =
+                                document.createElement(
+                                    "div"
+                                );
+
+
+                            item.className =
+                                "gallery-upload-preview-item";
+
+
+                            item.innerHTML = `
+
+                                <img
+                                    src="${event.target.result}"
+                                    alt="Vista previa ${indice + 1}"
+                                >
+
+                                <span class="gallery-preview-number">
+                                    ${indice + 1}
+                                </span>
+
+                            `;
+
+
+                            preview.appendChild(
+                                item
+                            );
+
+                        };
+
+
+                    reader.readAsDataURL(
+                        archivo
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        // =====================================================
+        // RESTAURAR PREVISUALIZACIÓN
+        // =====================================================
+
+        function restaurarVistaPrevia(
+            preview,
+            icono,
+            texto
+        ) {
+
+            if (!preview) {
+                return;
+            }
+
+
+            preview.innerHTML = `
+
+                <span class="image-upload-icon">
+                    ${icono}
+                </span>
+
+                <span>
+                    ${texto}
+                </span>
+
+            `;
+
+        }
+
+
+
+        // =====================================================
+        // MANEJAR FORMULARIO
+        // =====================================================
+
+        function manejarFormularioEmprendimiento(
+            event
+        ) {
+
+            const parametros =
+                new URLSearchParams(
+                    window.location.search
+                );
+
+
+            const idEdicion =
+                parametros.get("editar");
+
+
+            // -----------------------------------------------
+            // MODO EDICIÓN
+            // -----------------------------------------------
+
+            if (idEdicion) {
+
+                if (
+                    typeof guardarEdicionEmprendimiento ===
+                    "function"
+                ) {
+
+                    guardarEdicionEmprendimiento(
+                        event
+                    );
+
+                }
+
+                else {
+
+                    console.error(
+                        "No se encontró la función guardarEdicionEmprendimiento()."
+                    );
+
+                    event.preventDefault();
+
+                    alert(
+                        "No se pudo procesar la edición del emprendimiento."
+                    );
+
+                }
+
+            }
+
+
+            // -----------------------------------------------
+            // MODO AGREGAR
+            // -----------------------------------------------
+
+            else {
+
+                if (
+                    typeof agregarEmprendimiento ===
+                    "function"
+                ) {
+
+                    agregarEmprendimiento(
+                        event
+                    );
+
+                }
+
+                else {
+
+                    console.error(
+                        "No se encontró la función agregarEmprendimiento()."
+                    );
+
+                    event.preventDefault();
+
+                    alert(
+                        "No se pudo procesar el emprendimiento."
+                    );
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
+
+<h3>Foto de perfil</h3>
+
+<div id="previewPerfil"></div>
+
+<hr>
+
+<h3>Portada</h3>
+
+<div id="previewPortada"></div>
+
+<hr>
+
+<h3>Galería</h3>
+
+<div id="previewGaleria"></div>

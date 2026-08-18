@@ -682,3 +682,13 @@
 </html>
 
 <div id="toast-container" class="toast-container"></div>
+
+function cargarEmprendimientosGlobales() {
+    db.collection("emprendimientos").get().then((querySnapshot) => {
+        const lista = [];
+        querySnapshot.forEach((doc) => {
+            lista.push({ id: doc.id, ...doc.data() });
+        });
+        renderizarDirectorio(lista); // Muestra la lista para todos los usuarios
+    });
+}

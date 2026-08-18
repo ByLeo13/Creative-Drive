@@ -5351,3 +5351,24 @@ function mostrarToast(mensaje, tipo = "info") {
 // Ejemplo de uso:
 // mostrarToast("Emprendimiento guardado con éxito", "success");
 // mostrarToast("Error al cargar los datos", "error");
+
+const firebaseConfig = {
+  apiKey: "TU_API_KEY",
+  authDomain: "tu-proyecto.firebaseapp.com",
+  projectId: "tu-proyecto",
+  storageBucket: "tu-proyecto.appspot.com",
+  messagingSenderId: "...",
+  appId: "..."
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// En lugar de guardar en localStorage.setItem(...)
+db.collection("emprendimientos").add(nuevoEmprendimiento)
+  .then(() => {
+      mostrarToast("Emprendimiento publicado para todos", "success");
+  })
+  .catch((error) => {
+      console.error("Error al guardar:", error);
+  });

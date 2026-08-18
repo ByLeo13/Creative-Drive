@@ -1504,3 +1504,12 @@
 <div id="previewGaleria"></div>
 
 <div id="toast-container" class="toast-container"></div>
+
+// En lugar de guardar en localStorage.setItem(...)
+db.collection("emprendimientos").add(nuevoEmprendimiento)
+  .then(() => {
+      mostrarToast("Emprendimiento publicado para todos", "success");
+  })
+  .catch((error) => {
+      console.error("Error al guardar:", error);
+  });

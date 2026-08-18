@@ -5309,3 +5309,45 @@ document.addEventListener(
 
     }
 );
+
+// Ejemplo de estructura de emprendimiento
+{
+    id: "cafe-central",
+    nombre; "Café Central",
+    // ...
+    reconocido; true,
+    sellos; ["confianza", "local"] // Sellos asignados
+}
+
+// Dentro de la función que genera el HTML de la tarjeta:
+let sellosHTML = '';
+if (e.reconocido) {
+    sellosHTML += `<span class="badge-sello" title="Emprendimiento Reconocido">🏅 Reconocido</span>`;
+}
+if (e.sellos && e.sellos.includes('confianza')) {
+    sellosHTML += `<span class="badge-sello sello-confianza" title="Sello de Confianza">🛡️ Confianza</span>`;
+}
+
+function mostrarToast(mensaje, tipo = "info") {
+    let container = document.getElementById("toast-container");
+    if (!container) {
+        container = document.createElement("div");
+        container.id = "toast-container";
+        container.className = "toast-container";
+        document.body.appendChild(container);
+    }
+
+    const toast = document.createElement("div");
+    toast.className = `toast ${tipo}`;
+    toast.textContent = mensaje;
+
+    container.appendChild(toast);
+
+    setTimeout(() => {
+        toast.remove();
+    }, 3000);
+}
+
+// Ejemplo de uso:
+// mostrarToast("Emprendimiento guardado con éxito", "success");
+// mostrarToast("Error al cargar los datos", "error");
